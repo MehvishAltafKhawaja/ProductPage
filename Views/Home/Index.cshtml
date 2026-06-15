@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+ @if (TempData["error"] != null)
+{
+    <div class="container-fluid bg-dark text-white p-3">
+        <b>Error: </b> @TempData["error"]
+    </div>
+} 
+<div class="container-fluid">
+  <h1>Student Record</h1>
+  <form name="fr" action="/Home/Search" method="post">
+     <div class="row">
+         <div class="col-sm-12 col-lg-6">
+      <div>
+        <label class="form-label">Enter Course Id</label>
+        <input type="search" name="Id" class="form-control" />
+      </div>
+      <div>
+          <input type="submit" value="Search" class="btn btn-primary mt-3" />
+      </div>
+            </div>
+        </div>
+  </form>
+</div>

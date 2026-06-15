@@ -1,0 +1,58 @@
+﻿@model WebApp.ModelViews.CourseWiseStudent
+
+<h1 class="mb-3 text-dark bg-body-secondary">Course  Details</h1>
+<div class="container-fluid">
+    
+    <div class="row">
+         <div class="col-sm-12 col-lg-12">
+              <table class="table">
+                   <tr>
+                       <th>Course Id</th>
+                       <th>Course Name</th>
+                       <th>Course Duration</th>
+                       <th>Course Fee</th>
+                   </tr>
+                   <tr>
+                       <td>@Model.crsDetails.CourseId</td>
+                    <td>@Model.crsDetails.CourseName</td>
+                    <td>@Model.crsDetails.CourseDuration</td>
+                    <td>@Model.crsDetails.Coursefee</td>
+                   </tr>
+              </table>
+         </div>
+    </div>
+</div>
+<hr />
+<h1 class="mb-3 text-dark bg-body-secondary">Students Details</h1>
+@if(Model.studDetails.Count!=0){
+
+<div class="container-fluid">
+     <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            @foreach(var item in Model.studDetails)
+            {
+                <table class="table">
+                    <tr>
+                        <th>Student Id</th>
+                        <th>Student Name</th>
+                        <th>Student Gender</th>
+                        <th>Date of Birth</th>
+                        <th>Phone</th>
+                    </tr>
+                    <tr>
+                        <td>@item.StudId</td>
+                        <td>@item.StudName</td>
+                        <td>@item.StudGen</td>
+                        <td>@item.StudDob</td>
+                        <td>@item.StudPhon</td>
+                    </tr>
+                </table>
+            }          
+            </div>
+     </div>
+</div>
+}
+else
+{
+    <h1 style="color:red; border:1px solid black; font-weight:bold; padding:2px;">No Student Found For This Course!</h1>
+}
