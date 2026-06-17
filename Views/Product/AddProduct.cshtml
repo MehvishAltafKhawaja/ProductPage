@@ -1,0 +1,45 @@
+﻿@model WebApp.ModelViews.ProductImg
+
+
+<h1>Create New Product</h1>
+
+<hr />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-6">
+            <form asp-action="AddProduct" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-bg-danger"></div>
+                <div class="form-group">
+                    <label asp-for="name" class="control-label"></label>
+                    <input asp-for="name" class="form-control" />
+                    <span asp-validation-for="name" class="text-bg-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="discription" class="control-label"></label>
+                    <input asp-for="discription" class="form-control" />
+                    <span asp-validation-for="discription" class="text-bg-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="price" class="control-label"></label>
+                    <input asp-for="price" class="form-control" />
+                    <span asp-validation-for="price" class="text-bg-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="imageName" class="control-label"></label>
+                    <input type="file" asp-for="imageName" class="form-control" />
+                    <span asp-validation-for="imageName" class="text-bg-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div>
+        <a class="btn btn-dark mt-3" asp-action="Cart">Back To Records</a>
+    </div>
+</div>
+
